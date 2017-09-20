@@ -15,6 +15,7 @@ WORKDIR /tmp
 
 RUN apk --no-cache add \
       bash \
+      git \
       bash-completion \
       groff \
       less \
@@ -36,8 +37,7 @@ RUN apk --no-cache add \
     mv /tmp/RDSCli-${RDS_VERSION} /usr/local/ &&\
     rm -rf /tmp/* &&\
     mkdir ~/.aws &&\
-    chmod 700 ~/.aws
-RUN apt-get update git    
+    chmod 700 ~/.aws    
 
 # Expose volume for adding credentials
 VOLUME ["~/.aws"]
